@@ -1,11 +1,13 @@
-export const Person = ({ person }) => {
+export const Person = ({
+  person: { name, age, sex, isMarried, partnerName },
+}) => {
   return (
     <section className="Person">
-      <h2 className="Person__name">My name is {person.name}</h2>
-      {person.age ? <p className="Person__age">I am {person.age}</p> : null}
+      <h2 className="Person__name">My name is {name}</h2>
+      {age ? <p className="Person__age">I am {age}</p> : null}
       <p className="Person__partner">
-        {person.isMarried
-          ? `${person.partnerName} is my ${person.sex === 'm' ? 'wife' : 'husband'}`
+        {isMarried
+          ? `${partnerName} is my ${sex === 'm' ? 'wife' : 'husband'}`
           : 'I am not married'}
       </p>
     </section>
